@@ -1,0 +1,14 @@
+.vscode/extensions/
+# Keep workspace settings but ignore installed extension bundles
+.vscode/extensions/**
+
+# Python
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
