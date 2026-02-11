@@ -1,0 +1,308 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKYTOKEN LITEPAPER v1.2 — Skytoken</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+    .legal-page { padding: 120px 0 80px; position: relative; }
+    .legal-meta { margin-top: 6px; color: var(--muted); font-size: 0.95rem; }
+    .legal-section { margin-top: 22px; }
+    .legal-section h2 { margin-bottom: 8px; }
+    .legal-section h3 { margin-bottom: 8px; }
+    .legal-section ul { margin: 8px 0 0 18px; }
+    .legal-section ol { margin: 8px 0 0 18px; }
+    .legal-section p { margin: 8px 0; }
+    .legal-note { background: rgba(90, 99, 240, 0.08); border: 1px solid rgba(90, 99, 240, 0.25); padding: 14px 16px; border-radius: 12px; }
+    .en { color: var(--muted); font-size: 0.95rem; }
+    .watermark { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+    .watermark span { position: absolute; font-size: 64px; font-weight: 700; opacity: 0.06; color: #ffffff; transform: rotate(-18deg); }
+    .watermark .wm-1 { top: 12%; left: 5%; }
+    .watermark .wm-2 { bottom: 8%; right: 6%; }
+    .content-wrap { position: relative; z-index: 1; }
+    .table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    .table th, .table td { border: 1px solid rgba(255,255,255,0.12); padding: 10px; text-align: left; }
+    .table th { background: rgba(90, 99, 240, 0.15); }
+    code, pre { background: rgba(0,0,0,0.25); border-radius: 8px; }
+    pre { padding: 12px; overflow: auto; }
+    .search-bar { display: flex; gap: 10px; margin-top: 16px; }
+    .search-bar input { flex: 1; padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.04); color: #fff; }
+    .search-bar button { padding: 12px 16px; border-radius: 10px; border: none; background: #5a63f0; color: #fff; cursor: pointer; }
+</style>
+</head>
+<body>
+<header class="header">
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="../photo_2026-02-10_01-00-57.jpg" alt="Skytoken logo" width="36" height="36" loading="eager">
+                    <span>Skytoken</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#hero">Airdrop</a></li>
+                    <li><a href="../litepaper/index.html">Litepaper</a></li>
+                    <li><a href="../docs/index.html">Docs</a></li>
+                    <li><a href="../explorer/index.html">Explorer</a></li>
+                </ul>
+                <a href="https://t.me/SkyToken_Crypto_Official" class="btn btn-primary btn-nav" target="_blank">Telegram</a>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="watermark">
+    <span class="wm-1">Skytoken Foundation</span>
+    <span class="wm-2">Все права защищены</span>
+</div>
+<main class="legal-page">
+    <div class="container content-wrap">
+        <h1 class="section-title">SKYTOKEN LITEPAPER v1.2</h1>
+        <p class="section-subtitle">Краткий технический обзор проекта.</p>
+        <p class="legal-meta">Версия: v1.2 · Последнее обновление: 15 февраля 2025 года</p>
+        <p class="legal-meta">Юрисдикция: Skytoken Foundation (Швейцария, некоммерческая организация). Токен: SKY (ERC-20 / Arbitrum).</p>
+        <div class="legal-note"><strong>Легенда проекта:</strong> Skytoken — это децентрализованная P2P-сеть для аренды вычислительных мощностей GPU/CPU для AI/ML.</div>
+
+        <section class="legal-section">
+            <h2>SKYTOKEN LITEPAPER v1.2 / ЛАЙТПЕПЕР</h2>
+            <p class="en">A concise, technical overview of the Skytoken ecosystem for AI/ML compute.</p>
+        </section>
+        <section class="legal-section">
+            <h3>1. Executive Summary / Резюме</h3>
+            <p>Skytoken — это децентрализованная P2P-платформа аренды вычислительных мощностей GPU/CPU для AI/ML. Мы создаем рынок, где поставщики вычислений подключают свои ресурсы, а потребители получают гибкий доступ к вычислениям без зависимости от одного провайдера.</p>
+            <p>Проблема рынка — дефицит GPU, высокая стоимость облачных сервисов, ограниченная доступность мощностей и риски цензуры. Skytoken решает эти проблемы через сеть независимых нод, прозрачные правила, репутацию и экономические стимулы, встроенные в смарт-контракты.</p>
+            <p>Проект находится на стадии pre-mainnet и развивает инфраструктуру, API и механизмы безопасности. Любые сроки и параметры являются ориентировочными и могут изменяться.</p>
+            <p class="en">Skytoken focuses on utility, transparency, and reliable access to compute without centralized gatekeepers.</p>
+        </section>
+        <section class="legal-section">
+            <h3>2. Market Context / Контекст рынка</h3>
+            <p>Спрос на вычислительные мощности растет вслед за развитием генеративного ИИ и масштабных ML-моделей. В традиционных облаках цена рассчитывается по премиальному тарифу, а доступ к топовым GPU может быть ограничен квотами и очередями.</p>
+            <p>Сегмент ML/AI требует предсказуемых затрат, масштабирования в пиковые периоды и возможности использовать специализированные конфигурации. P2P-модель помогает снизить стоимость, расширить выбор оборудования и уменьшить зависимость от одного поставщика.</p>
+            <p>Отдельная проблема — отсутствие прозрачности в стоимости и распределении ресурсов. Skytoken стремится обеспечить понятные тарифы, открытую статистику и конкуренцию между поставщиками.</p>
+        </section>
+        <section class="legal-section">
+            <h3>3. Product Overview / Обзор продукта</h3>
+            <p>Skytoken объединяет поставщиков и потребителей в единую сеть. Поставщики предоставляют ресурсы по параметрам (GPU модель, VRAM, CPU, RAM, storage). Потребители размещают запросы на вычисления, а Matching Engine подбирает оптимальные ноды по цене, доступности и репутации.</p>
+            <p>Оплата происходит через Escrow-смарт-контракты. Платеж блокируется до подтверждения выполнения. Такая модель снижает риски невыполненных задач и формирует доверие в сети.</p>
+            <p>Платформа поддерживает различные типы задач: обучение моделей, инференс, 3D-рендеринг, пакетная обработка данных и симуляции. В будущем планируются инструменты для гибридных задач с оркестрацией по нескольким нодам.</p>
+        </section>
+        <section class="legal-section">
+            <h3>4. Use Cases / Сценарии использования</h3>
+            <ul>
+                <li>Обучение ML-моделей и fine-tuning.</li>
+                <li>Инференс генеративных моделей (изображения, текст, аудио).</li>
+                <li>Пакетная обработка данных и аналитика.</li>
+                <li>3D/CGI рендеринг и симуляции.</li>
+                <li>Гибридные сценарии для исследовательских лабораторий.</li>
+            </ul>
+            <p class="en">Skytoken targets flexible, on-demand compute for research and production workloads.</p>
+        </section>
+        <section class="legal-section">
+            <h3>5. Architecture / Архитектура</h3>
+            <p><strong>Слои:</strong> (1) смарт-контракты на Arbitrum для учета заказов и выплат, (2) вычислительные ноды с агентом Skytoken Node, (3) Matching Engine и API-шлюз, (4) пользовательский интерфейс и SDK.</p>
+            <p><strong>Ноды:</strong> нода регистрируется в Registry, подтверждает характеристики и подключает мониторинг. Репутация зависит от доступности, качества выполнения и отзывов.</p>
+            <p><strong>Control Plane:</strong> отвечает за создание заказов, маршрутизацию и биллинг. <strong>Data Plane:</strong> обеспечивает исполнение задач в контейнерах, изоляцию и мониторинг.</p>
+            <p><strong>Proof-of-Work проверки:</strong> используются контрольные вычисления и подтверждение логов для проверки корректности исполнения задач.</p>
+        </section>
+        <section class="legal-section">
+            <h3>6. Network Roles / Роли сети</h3>
+            <ul>
+                <li><strong>Поставщики</strong> — владельцы GPU/CPU, предоставляющие ресурсы.</li>
+                <li><strong>Потребители</strong> — пользователи, размещающие заказы на вычисления.</li>
+                <li><strong>Верификаторы</strong> — участники, подтверждающие корректность выполнения задач.</li>
+                <li><strong>DAO-участники</strong> — держатели токенов, участвующие в управлении.</li>
+            </ul>
+        </section>
+        <section class="legal-section">
+            <h3>7. Rental Flow / Процесс аренды</h3>
+            <ol>
+                <li>Потребитель формирует запрос: тип GPU, объем VRAM, срок аренды, бюджет.</li>
+                <li>Matching Engine подбирает ноду, согласовывает параметры и резервирует ресурсы.</li>
+                <li>Платеж блокируется в Escrow и подтверждает заказ.</li>
+                <li>Выполнение задачи фиксируется в логах, средства распределяются поставщику.</li>
+            </ol>
+        </section>
+        <section class="legal-section">
+            <h3>8. Security / Безопасность</h3>
+            <p>В основе безопасности — сочетание смарт-контрактов, репутационной системы и мониторинга. Поставщики обязуются соблюдать минимальные требования по доступности. Для корпоративных клиентов доступен SLA по отдельному соглашению.</p>
+            <p>Компоненты системы проходят тестирование, а критические изменения публикуются в документации. Однако в условиях pre-mainnet возможны изменения архитектуры и параметров.</p>
+        </section>
+        <section class="legal-section">
+            <h3>9. Technical Stack / Технический стек</h3>
+            <p>Вычислительные ноды работают в контейнерах, поддерживают стандартные драйверы GPU и библиотеки машинного обучения. Для оркестрации используется контейнерный рантайм и агент Skytoken Node, который контролирует доступ к ресурсам.</p>
+            <p>В инфраструктуре предусмотрены механизмы мониторинга, логирования и базовой изоляции рабочих процессов. SDK и API рассчитаны на интеграции с CI/CD и ML-оркестраторами.</p>
+            <p>Система поддерживает гибкие профили ресурсов, позволяя делить мощность между задачами и выравнивать нагрузку в условиях пикового спроса.</p>
+        </section>
+        <section class="legal-section">
+            <h3>10. Data Handling / Работа с данными</h3>
+            <p>Данные пользователя остаются под его контролем. Skytoken не использует пользовательские датасеты или модели для обучения собственных систем без явного согласия.</p>
+            <p>Рекомендуется использовать шифрование, временные хранилища и удаление данных после завершения задач. Для корпоративных клиентов возможны дополнительные требования и политики.</p>
+            <p>Логи исполнения задач могут храниться ограниченное время для поддержки и аудита качества, после чего анонимизируются.</p>
+        </section>
+        <section class="legal-section">
+            <h3>11. Tokenomics / Токеномика</h3>
+            <p><strong>Тикер:</strong> SKY. <strong>Стандарт:</strong> ERC-20. <strong>Сеть:</strong> Arbitrum. <strong>Эмиссия:</strong> 1,000,000,000 SKY (фиксированная).</p>
+            <table class="table">
+                <thead>
+                    <tr><th>Категория</th><th>Доля</th><th>Объем</th><th>Комментарий</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Airdrop</td><td>25%</td><td>250,000,000</td><td>Распределение среди сообщества</td></tr>
+                    <tr><td>Staking Rewards</td><td>30%</td><td>300,000,000</td><td>Вознаграждение поставщиков</td></tr>
+                    <tr><td>Команда</td><td>15%</td><td>150,000,000</td><td>Вестинг 3 года</td></tr>
+                    <tr><td>Казна</td><td>20%</td><td>200,000,000</td><td>Развитие, гранты, ликвидность</td></tr>
+                    <tr><td>Приватный раунд</td><td>10%</td><td>100,000,000</td><td>Ранние инвесторы</td></tr>
+                </tbody>
+            </table>
+            <p><strong>Инфляция:</strong> 0%. Дефляционные механизмы включают сжигание части комиссий и оптимизацию расходов сети.</p>
+        </section>
+        <section class="legal-section">
+            <h3>12. Utility / Полезность токена</h3>
+            <ul>
+                <li>Оплата аренды GPU/CPU и комиссий сети.</li>
+                <li>Стейкинг для поставщиков, повышающий приоритет выдачи заказов.</li>
+                <li>Участие в DAO-голосованиях по параметрам сети.</li>
+                <li>Скидки на комиссии при оплате в SKY.</li>
+            </ul>
+            <p class="en">The token is designed for utility within the network and does not represent investment rights.</p>
+        </section>
+        <section class="legal-section">
+            <h3>13. Incentive Model / Модель стимулов</h3>
+            <p>Поставщики нод получают вознаграждение в SKY за фактическое использование их ресурсов. Модель стимулирует стабильность, поскольку длительная доступность повышает репутацию и частоту заказов.</p>
+            <p>При нарушении условий доступности или качества исполнения могут применяться штрафные механизмы (slashing) или снижение репутации. Эти параметры определяются DAO и могут корректироваться.</p>
+        </section>
+        <section class="legal-section">
+            <h3>14. Fees & Treasury / Комиссии и казна</h3>
+            <p>Сеть взимает сервисную комиссию, часть которой направляется в казну для финансирования грантов, развития инфраструктуры и поддержания безопасности. Часть комиссий может быть сожжена для поддержания дефляционной модели.</p>
+            <p>Расходы казны публикуются в отчетах и доступны в документации, насколько это применимо.</p>
+        </section>
+        <section class="legal-section">
+            <h3>15. Governance / Управление</h3>
+            <p>Управление сетью реализуется через DAO-механизмы. Владельцы токенов могут участвовать в голосованиях, касающихся параметров тарификации, стейкинга, грантов и правил сети. Решения принимаются на основе заранее определенных процедур и кворума.</p>
+            <p>DAO не гарантирует неизменность параметров сети. Любые изменения публикуются в официальных каналах.</p>
+        </section>
+        <section class="legal-section">
+            <h3>16. Airdrop / Airdrop-кампания</h3>
+            <p>Airdrop является маркетинговой программой и не гарантирует получение токенов. Процедуры распределения могут включать проверки на мультиаккаунты, анти-сибил меры и требования к активности.</p>
+            <p>Условия Airdrop могут меняться, включая объемы распределения и критерии отбора.</p>
+        </section>
+        <section class="legal-section">
+            <h3>17. Roadmap / Дорожная карта</h3>
+            <p>Все сроки ориентировочные и могут изменяться без уведомления.</p>
+            <table class="table">
+                <thead>
+                    <tr><th>Период</th><th>Ключевые вехи</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Q2 2025</td><td>Расширение testnet, улучшение Matching Engine, закрытое тестирование SLA</td></tr>
+                    <tr><td>Q3 2025</td><td>Публичные ноды, запуск репутационной системы, SDK для интеграций</td></tr>
+                    <tr><td>Q4 2025</td><td>Аудиты, подготовка mainnet, стабилизация API и документации</td></tr>
+                    <tr><td>Q1 2026</td><td>Ориентировочный запуск mainnet и масштабирование сети</td></tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="legal-section">
+            <h3>18. Team & Advisors / Команда и советники</h3>
+            <p>Команда объединяет специалистов в области облачных вычислений, блокчейна и ML-инфраструктуры. Публичные профили доступны по запросу.</p>
+            <ul>
+                <li><strong>Алексей Воронов</strong> — Founder & CEO, 12+ лет в облачных технологиях.</li>
+                <li><strong>Майкл Чен</strong> — CTO, опыт в распределенных системах и AI/ML инфраструктуре.</li>
+                <li><strong>София Ларсен</strong> — Head of BD, партнерства в сфере AI и HPC.</li>
+                <li><strong>Советники:</strong> эксперты по блокчейн-аудиту, GPU-инфраструктуре и продуктовой стратегии.</li>
+            </ul>
+        </section>
+        <section class="legal-section">
+            <h3>19. Partners / Партнеры</h3>
+            <p>Партнерская экосистема находится в развитии. Ниже приведены примеры партнеров по направлениям.</p>
+            <ul>
+                <li>NovaCompute Labs</li>
+                <li>Helios ML Cloud</li>
+                <li>Arcadia Research Group</li>
+                <li>VectorForge Studio</li>
+                <li>Orion Data Systems</li>
+                <li>Stellar HPC Alliance</li>
+            </ul>
+        </section>
+        <section class="legal-section">
+            <h3>20. Community & Grants / Сообщество и гранты</h3>
+            <p>Skytoken поддерживает разработчиков и исследователей через грантовые программы. Приоритет отдается инструментам, повышающим качество вычислений, безопасность и доступность сети.</p>
+            <p>Условия грантов публикуются отдельно и могут включать отчетность по использованию средств.</p>
+        </section>
+        <section class="legal-section">
+            <h3>21. Economic Sustainability / Экономическая устойчивость</h3>
+            <p>Экономика сети построена так, чтобы стимулировать долгосрочную доступность ресурсов. Комиссии и стейкинг должны покрывать операционные расходы и обеспечивать устойчивое развитие.</p>
+            <p>Сеть ориентирована на баланс между интересами поставщиков и потребителей, сохраняя конкурентные цены и достаточную мотивацию для подключения мощностей.</p>
+        </section>
+        <section class="legal-section">
+            <h3>22. Compliance / Юридические аспекты</h3>
+            <p>Skytoken Foundation зарегистрирована в Швейцарии как некоммерческая организация. Проект соблюдает применимые требования к защите данных и ограничивает доступ в запрещенных юрисдикциях.</p>
+            <p>Токен SKY является утилитарным и предназначен исключительно для доступа к услугам сети.</p>
+        </section>
+        <section class="legal-section">
+            <h3>23. Risk Factors / Риски</h3>
+            <p>Проект подвержен рыночным, технологическим и регуляторным рискам. Участники сети должны учитывать риски волатильности токена, доступности нод, изменений правового режима и технических сбоев.</p>
+        </section>
+        <section class="legal-section">
+            <h3>24. Disclaimer / Отказ от ответственности</h3>
+            <p>Настоящий документ носит информационный характер и не является офертой или инвестиционной рекомендацией. Skytoken Foundation не гарантирует доходность, рост стоимости токена или ликвидность. Параметры сети могут меняться в процессе развития проекта.</p>
+        </section>
+        <section class="legal-section">
+            <h3>25. Integrations & SDK / Интеграции и SDK</h3>
+            <p>SDK позволяет интегрировать Skytoken в существующие ML-пайплайны. Планируются модули для Python, CLI и интеграции с популярными фреймворками оркестрации задач.</p>
+            <p>Для разработчиков доступны примеры, шаблоны окружений и базовые инструменты мониторинга.</p>
+        </section>
+        <section class="legal-section">
+            <h3>26. Operational Considerations / Операционные аспекты</h3>
+            <p>Поставщики обязуются обеспечивать стабильную сеть и поддерживать актуальные драйверы. Для защиты от перегрузки предусмотрены лимиты на количество одновременных задач.</p>
+            <p>Потребители могут выбирать ноды по уровням надежности и рейтингу, используя фильтры в интерфейсе.</p>
+        </section>
+        <section class="legal-section">
+            <h3>27. Responsible Use / Ответственное использование</h3>
+            <p>Пользователи обязуются соблюдать применимое законодательство и не использовать вычислительные мощности для вредоносных действий, включая атаки на инфраструктуру и нарушения прав третьих лиц.</p>
+            <p>Skytoken оставляет за собой право ограничивать доступ при выявлении нарушений.</p>
+        </section>
+        <section class="legal-section">
+            <h3>28. Performance & Reliability / Производительность и надежность</h3>
+            <p>Производительность сети зависит от качества подключенных нод и распределения задач. Для повышения надежности используются рейтинги, минимальные требования к аптайму и механизмы мониторинга доступности.</p>
+            <p>Потребители могут выбирать конфигурации с повышенной надежностью, а поставщики — получать дополнительные преимущества за стабильную работу. Эти параметры регулируются DAO и могут корректироваться по мере роста сети.</p>
+            <p class="en">Reliability is enforced through reputation, monitoring, and configurable service profiles.</p>
+        </section>
+    </div>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="../photo_2026-02-10_01-00-57.jpg" alt="Skytoken logo" width="36" height="36" loading="lazy">
+                    <span>Skytoken</span>
+                </div>
+                <p>Skytoken — это децентрализованная P2P-сеть для аренды GPU/CPU для AI/ML.</p>
+                <p class="copyright">&copy; 2024-2026 Skytoken Foundation. Все права защищены.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Документы</h4>
+                <ul>
+                    <li><a href="../disclaimer/index.html">Disclaimer</a></li>
+                    <li><a href="../privacy-policy/index.html">Privacy Policy</a></li>
+                    <li><a href="../terms-of-use/index.html">Terms of Use</a></li>
+                    <li><a href="../cookies-policy/index.html">Cookies Policy</a></li>
+                    <li><a href="../litepaper/index.html">Litepaper</a></li>
+                    <li><a href="../docs/index.html">Documentation</a></li>
+                    <li><a href="../explorer/index.html">Block Explorer</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Соцсети</h4>
+                <div class="social-links">
+                    <a href="https://t.me/SkyToken_Crypto_Official" title="Telegram" target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a href="https://github.com/skytoken-protocol" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

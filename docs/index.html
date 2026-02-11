@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKYTOKEN TECHNICAL DOCUMENTATION — Skytoken</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+    .legal-page { padding: 120px 0 80px; position: relative; }
+    .legal-meta { margin-top: 6px; color: var(--muted); font-size: 0.95rem; }
+    .legal-section { margin-top: 22px; }
+    .legal-section h2 { margin-bottom: 8px; }
+    .legal-section h3 { margin-bottom: 8px; }
+    .legal-section ul { margin: 8px 0 0 18px; }
+    .legal-section ol { margin: 8px 0 0 18px; }
+    .legal-section p { margin: 8px 0; }
+    .legal-note { background: rgba(90, 99, 240, 0.08); border: 1px solid rgba(90, 99, 240, 0.25); padding: 14px 16px; border-radius: 12px; }
+    .en { color: var(--muted); font-size: 0.95rem; }
+    .watermark { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+    .watermark span { position: absolute; font-size: 64px; font-weight: 700; opacity: 0.06; color: #ffffff; transform: rotate(-18deg); }
+    .watermark .wm-1 { top: 12%; left: 5%; }
+    .watermark .wm-2 { bottom: 8%; right: 6%; }
+    .content-wrap { position: relative; z-index: 1; }
+    .table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    .table th, .table td { border: 1px solid rgba(255,255,255,0.12); padding: 10px; text-align: left; }
+    .table th { background: rgba(90, 99, 240, 0.15); }
+    code, pre { background: rgba(0,0,0,0.25); border-radius: 8px; }
+    pre { padding: 12px; overflow: auto; }
+    .search-bar { display: flex; gap: 10px; margin-top: 16px; }
+    .search-bar input { flex: 1; padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.04); color: #fff; }
+    .search-bar button { padding: 12px 16px; border-radius: 10px; border: none; background: #5a63f0; color: #fff; cursor: pointer; }
+</style>
+</head>
+<body>
+<header class="header">
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="../photo_2026-02-10_01-00-57.jpg" alt="Skytoken logo" width="36" height="36" loading="eager">
+                    <span>Skytoken</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#hero">Airdrop</a></li>
+                    <li><a href="../litepaper/index.html">Litepaper</a></li>
+                    <li><a href="../docs/index.html">Docs</a></li>
+                    <li><a href="../explorer/index.html">Explorer</a></li>
+                </ul>
+                <a href="https://t.me/SkyToken_Crypto_Official" class="btn btn-primary btn-nav" target="_blank">Telegram</a>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="watermark">
+    <span class="wm-1">Skytoken Foundation</span>
+    <span class="wm-2">Все права защищены</span>
+</div>
+<main class="legal-page">
+    <div class="container content-wrap">
+        <h1 class="section-title">SKYTOKEN TECHNICAL DOCUMENTATION / ТЕХНИЧЕСКАЯ ДОКУМЕНТАЦИЯ</h1>
+        <p class="section-subtitle">Технические материалы и quick start.</p>
+        <p class="legal-meta">Версия: v1.2 · Последнее обновление: 15 февраля 2025 года</p>
+        <p class="legal-meta">Юрисдикция: Skytoken Foundation (Швейцария, некоммерческая организация). Токен: SKY (ERC-20 / Arbitrum).</p>
+        <div class="legal-note"><strong>Легенда проекта:</strong> Skytoken — это децентрализованная P2P-сеть для аренды вычислительных мощностей GPU/CPU для AI/ML.</div>
+
+        <section class="legal-section">
+            <h2>SKYTOKEN TECHNICAL DOCUMENTATION / ТЕХНИЧЕСКАЯ ДОКУМЕНТАЦИЯ</h2>
+            <p class="en">This documentation provides a high-level technical overview and quick start.</p>
+        </section>
+        <section class="legal-section">
+            <h3>1. Quick Start (Поставщики)</h3>
+            <ul>
+                <li>Требования: Windows/Linux, NVIDIA GPU, 8GB+ RAM, 100GB+ disk.</li>
+                <li>Установка ноды:</li>
+            </ul>
+            <pre><code>docker pull skytoken/node:latest
+
+docker run -d \
+  --name skytoken-node \
+  -e SKY_TOKEN=YOUR_API_KEY \
+  -p 30303:30303 \
+  skytoken/node:latest</code></pre>
+            <p>Привязка кошелька выполняется через CLI-помощник после установки.</p>
+        </section>
+        <section class="legal-section">
+            <h3>2. Quick Start (Потребители)</h3>
+            <ul>
+                <li>Подключение к ноде через SSH/RDP.</li>
+                <li>Установка CUDA, PyTorch, TensorFlow.</li>
+                <li>Примеры задач: инференс Stable Diffusion, обучение LLaMA.</li>
+            </ul>
+            <pre><code># пример: запуск контейнера с CUDA
+nvidia-smi
+python -c "import torch; print(torch.cuda.is_available())"</code></pre>
+        </section>
+        <section class="legal-section">
+            <h3>3. Smart Contracts</h3>
+            <p>Адреса смарт-контрактов будут опубликованы после аудита. Текущие заглушки:</p>
+            <ul>
+                <li>Registry: <code>0x0000000000000000000000000000000000000000</code></li>
+                <li>Escrow: <code>0x0000000000000000000000000000000000000000</code></li>
+                <li>Staking: <code>0x0000000000000000000000000000000000000000</code></li>
+            </ul>
+        </section>
+        <section class="legal-section">
+            <h3>4. API Reference</h3>
+            <ul>
+                <li><code>GET /api/v1/nodes</code> — список активных нод</li>
+                <li><code>POST /api/v1/orders</code> — создание заказа</li>
+                <li><code>GET /api/v1/orders/{id}</code> — статус заказа</li>
+            </ul>
+            <p>WebSocket: <code>wss://api.skytoken.io/v1/logs</code> (заглушка)</p>
+        </section>
+        <section class="legal-section">
+            <h3>5. FAQ по запуску ноды</h3>
+            <ul>
+                <li>Проблемы с NAT/Firewall: откройте порты 30303 и 8545.</li>
+                <li>Требования к сети: рекомендуется 100 Mbps+.</li>
+                <li>Стабильность: используйте UPS и мониторинг.</li>
+            </ul>
+        </section>
+        <section class="legal-section">
+            <h3>6. Security</h3>
+            <p>Не передавайте приватные ключи третьим лицам. Используйте отдельные адреса для нод. Bug Bounty Program будет объявлена дополнительно.</p>
+        </section>
+    </div>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="../photo_2026-02-10_01-00-57.jpg" alt="Skytoken logo" width="36" height="36" loading="lazy">
+                    <span>Skytoken</span>
+                </div>
+                <p>Skytoken — это децентрализованная P2P-сеть для аренды GPU/CPU для AI/ML.</p>
+                <p class="copyright">&copy; 2024-2026 Skytoken Foundation. Все права защищены.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Документы</h4>
+                <ul>
+                    <li><a href="../disclaimer/index.html">Disclaimer</a></li>
+                    <li><a href="../privacy-policy/index.html">Privacy Policy</a></li>
+                    <li><a href="../terms-of-use/index.html">Terms of Use</a></li>
+                    <li><a href="../cookies-policy/index.html">Cookies Policy</a></li>
+                    <li><a href="../litepaper/index.html">Litepaper</a></li>
+                    <li><a href="../docs/index.html">Documentation</a></li>
+                    <li><a href="../explorer/index.html">Block Explorer</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Соцсети</h4>
+                <div class="social-links">
+                    <a href="https://t.me/SkyToken_Crypto_Official" title="Telegram" target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a href="https://github.com/skytoken-protocol" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
