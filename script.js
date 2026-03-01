@@ -8,42 +8,70 @@
 // ============================================
 
 function initCountdown() {
-    const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 5);
-    targetDate.setHours(0, 0, 0, 0);
+    const cycleDurationMs = 5 * 24 * 60 * 60 * 1000;
+    let targetTimestamp = Date.now() + cycleDurationMs;
 
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
+    // function updateCountdown() {
+    //     const now = new Date().getTime();
+    //     const distance = targetDate - now;
+    //
+    //     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    //     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    //     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    //     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    //
+    //     const daysEl = document.getElementById('days');
+    //     const hoursEl = document.getElementById('hours');
+    //     const minutesEl = document.getElementById('minutes');
+    //     const secondsEl = document.getElementById('seconds');
+    //
+    //     if (daysEl) daysEl.textContent = String(Math.max(days, 0)).padStart(2, '0');
+    //     if (hoursEl) hoursEl.textContent = String(Math.max(hours, 0)).padStart(2, '0');
+    //     if (minutesEl) minutesEl.textContent = String(Math.max(minutes, 0)).padStart(2, '0');
+    //     if (secondsEl) secondsEl.textContent = String(Math.max(seconds, 0)).padStart(2, '0');
+    //
+    //     const finalDaysEl = document.getElementById('final-days');
+    //     const finalHoursEl = document.getElementById('final-hours');
+    //     const finalMinutesEl = document.getElementById('final-minutes');
+    //     const finalSecondsEl = document.getElementById('final-seconds');
+    //
+    //     if (finalDaysEl) finalDaysEl.textContent = String(Math.max(days, 0)).padStart(2, '0');
+    //     if (finalHoursEl) finalHoursEl.textContent = String(Math.max(hours, 0)).padStart(2, '0');
+    //     if (finalMinutesEl) finalMinutesEl.textContent = String(Math.max(minutes, 0)).padStart(2, '0');
+    //     if (finalSecondsEl) finalSecondsEl.textContent = String(Math.max(seconds, 0)).padStart(2, '0');
+    // }
+
+    function renderCountdown() {
+        const now = Date.now();
+        if (now >= targetTimestamp) {
+            targetTimestamp = now + cycleDurationMs;
+        }
+        const distance = Math.max(targetTimestamp - now, 0);
 
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        const daysEl = document.getElementById('days');
-        const hoursEl = document.getElementById('hours');
-        const minutesEl = document.getElementById('minutes');
-        const secondsEl = document.getElementById('seconds');
+        const setValue = (id, value) => {
+            const el = document.getElementById(id);
+            if (el) {
+                el.textContent = String(value).padStart(2, '0');
+            }
+        };
 
-        if (daysEl) daysEl.textContent = String(Math.max(days, 0)).padStart(2, '0');
-        if (hoursEl) hoursEl.textContent = String(Math.max(hours, 0)).padStart(2, '0');
-        if (minutesEl) minutesEl.textContent = String(Math.max(minutes, 0)).padStart(2, '0');
-        if (secondsEl) secondsEl.textContent = String(Math.max(seconds, 0)).padStart(2, '0');
-
-        const finalDaysEl = document.getElementById('final-days');
-        const finalHoursEl = document.getElementById('final-hours');
-        const finalMinutesEl = document.getElementById('final-minutes');
-        const finalSecondsEl = document.getElementById('final-seconds');
-
-        if (finalDaysEl) finalDaysEl.textContent = String(Math.max(days, 0)).padStart(2, '0');
-        if (finalHoursEl) finalHoursEl.textContent = String(Math.max(hours, 0)).padStart(2, '0');
-        if (finalMinutesEl) finalMinutesEl.textContent = String(Math.max(minutes, 0)).padStart(2, '0');
-        if (finalSecondsEl) finalSecondsEl.textContent = String(Math.max(seconds, 0)).padStart(2, '0');
+        setValue('days', days);
+        setValue('hours', hours);
+        setValue('minutes', minutes);
+        setValue('seconds', seconds);
+        setValue('final-days', days);
+        setValue('final-hours', hours);
+        setValue('final-minutes', minutes);
+        setValue('final-seconds', seconds);
     }
 
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+    renderCountdown();
+    setInterval(renderCountdown, 1000);
 }
 
 // ============================================
