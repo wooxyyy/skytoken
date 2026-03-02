@@ -9,7 +9,30 @@
 
 function initCountdown() {
     const cycleDurationMs = 5 * 24 * 60 * 60 * 1000;
-    let targetTimestamp = Date.now() + cycleDurationMs;
+    const countdownStorageKey = 'limisky_countdown_cycle_start';
+    const now = Date.now();
+
+    const readStoredCycleStart = () => {
+        const raw = localStorage.getItem(countdownStorageKey);
+        const parsed = Number(raw);
+        return Number.isFinite(parsed) ? parsed : null;
+    };
+
+    const writeCycleStart = (ts) => {
+        localStorage.setItem(countdownStorageKey, String(ts));
+    };
+
+    let cycleStartTimestamp = readStoredCycleStart();
+    if (!cycleStartTimestamp) {
+        cycleStartTimestamp = now;
+        writeCycleStart(cycleStartTimestamp);
+    }
+
+    if (now >= cycleStartTimestamp + cycleDurationMs) {
+        const cyclesPassed = Math.floor((now - cycleStartTimestamp) / cycleDurationMs);
+        cycleStartTimestamp += cyclesPassed * cycleDurationMs;
+        writeCycleStart(cycleStartTimestamp);
+    }
 
     // function updateCountdown() {
     //     const now = new Date().getTime();
@@ -42,11 +65,16 @@ function initCountdown() {
     // }
 
     function renderCountdown() {
-        const now = Date.now();
-        if (now >= targetTimestamp) {
-            targetTimestamp = now + cycleDurationMs;
+        const currentNow = Date.now();
+        let targetTimestamp = cycleStartTimestamp + cycleDurationMs;
+
+        if (currentNow >= targetTimestamp) {
+            const cyclesPassed = Math.floor((currentNow - cycleStartTimestamp) / cycleDurationMs);
+            cycleStartTimestamp += cyclesPassed * cycleDurationMs;
+            writeCycleStart(cycleStartTimestamp);
+            targetTimestamp = cycleStartTimestamp + cycleDurationMs;
         }
-        const distance = Math.max(targetTimestamp - now, 0);
+        const distance = Math.max(targetTimestamp - currentNow, 0);
 
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));

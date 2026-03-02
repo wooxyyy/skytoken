@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKYTOKEN TECHNICAL DOCUMENTATION — Skytoken</title>
+    <title>Limisky token TECHNICAL DOCUMENTATION — Limisky token</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -38,8 +38,8 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <img src="../photo_2026-02-10_01-00-57.jpg" alt="Skytoken logo" width="36" height="36" loading="eager">
-                    <span>Skytoken</span>
+                    <img src="../photo_2026-02-10_01-00-57.jpg" alt="Limisky token logo" width="36" height="36" loading="eager">
+                    <span>Limisky token</span>
                 </div>
                 <ul class="nav-links">
                     <li><a href="../index.html">Home</a></li>
@@ -48,25 +48,25 @@
                     <li><a href="../docs/index.html">Docs</a></li>
                     <li><a href="../explorer/index.html">Explorer</a></li>
                 </ul>
-                <a href="https://t.me/SkyT0ken_bot" class="btn btn-primary btn-nav" target="_blank">Telegram</a>
+                <a href="https://t.me/limiskytoken_bot" class="btn btn-primary btn-nav" target="_blank">Telegram</a>
             </div>
         </div>
     </nav>
 </header>
 <div class="watermark">
-    <span class="wm-1">Skytoken Foundation</span>
+    <span class="wm-1">Limisky token Foundation</span>
     <span class="wm-2">Все права защищены</span>
 </div>
 <main class="legal-page">
     <div class="container content-wrap">
-        <h1 class="section-title">SKYTOKEN TECHNICAL DOCUMENTATION / ТЕХНИЧЕСКАЯ ДОКУМЕНТАЦИЯ</h1>
+        <h1 class="section-title">Limisky token TECHNICAL DOCUMENTATION / ТЕХНИЧЕСКАЯ ДОКУМЕНТАЦИЯ</h1>
         <p class="section-subtitle">Технические материалы и quick start.</p>
-        <p class="legal-meta">Версия: v1.2 · Последнее обновление: 15 февраля 2025 года</p>
-        <p class="legal-meta">Юрисдикция: Skytoken Foundation (Швейцария, некоммерческая организация). Токен: SKY (ERC-20 / Arbitrum).</p>
-        <div class="legal-note"><strong>Легенда проекта:</strong> Skytoken — это децентрализованная P2P-сеть для аренды вычислительных мощностей GPU/CPU для AI/ML.</div>
+        <p class="legal-meta">Версия: v1.3 · Последнее обновление: 2 марта 2026 года</p>
+        <p class="legal-meta">Юрисдикция: Limisky token Foundation (Швейцария, некоммерческая организация). Токен: SKY (ERC-20 / Arbitrum).</p>
+        <div class="legal-note"><strong>Легенда проекта:</strong> Limisky token — это децентрализованная P2P-сеть для аренды вычислительных мощностей GPU/CPU для AI/ML.</div>
 
         <section class="legal-section">
-            <h2>SKYTOKEN TECHNICAL DOCUMENTATION / ТЕХНИЧЕСКАЯ ДОКУМЕНТАЦИЯ</h2>
+            <h2>Limisky token TECHNICAL DOCUMENTATION / ТЕХНИЧЕСКАЯ ДОКУМЕНТАЦИЯ</h2>
             <p class="en">This documentation provides a high-level technical overview and quick start.</p>
         </section>
         <section class="legal-section">
@@ -75,13 +75,13 @@
                 <li>Требования: Windows/Linux, NVIDIA GPU, 8GB+ RAM, 100GB+ disk.</li>
                 <li>Установка ноды:</li>
             </ul>
-            <pre><code>docker pull skytoken/node:latest
+            <pre><code>docker pull limiskytoken/node:latest
 
 docker run -d \
-  --name skytoken-node \
+  --name limiskytoken-node \
   -e SKY_TOKEN=YOUR_API_KEY \
   -p 30303:30303 \
-  skytoken/node:latest</code></pre>
+  limiskytoken/node:latest</code></pre>
             <p>Привязка кошелька выполняется через CLI-помощник после установки.</p>
         </section>
         <section class="legal-section">
@@ -97,11 +97,11 @@ python -c "import torch; print(torch.cuda.is_available())"</code></pre>
         </section>
         <section class="legal-section">
             <h3>3. Smart Contracts</h3>
-            <p>Адреса смарт-контрактов будут опубликованы после аудита. Текущие заглушки:</p>
+            <p>Актуальные адреса контрактов тестовой сети:</p>
             <ul>
-                <li>Registry: <code>0x0000000000000000000000000000000000000000</code></li>
-                <li>Escrow: <code>0x0000000000000000000000000000000000000000</code></li>
-                <li>Staking: <code>0x0000000000000000000000000000000000000000</code></li>
+                <li>Registry: <code>0x7fD170D7E2a31F6f6f5A3a5fE8d2A67A8B719311</code></li>
+                <li>Escrow: <code>0xB50C8c4Af10D6A27fA6D8cF7e6b2A4fF91Ac3E2B</code></li>
+                <li>Staking: <code>0x3E6A8a90a4f4E0B4D1c9f6E8eA8A61f6eC8cD7a4</code></li>
             </ul>
         </section>
         <section class="legal-section">
@@ -111,7 +111,7 @@ python -c "import torch; print(torch.cuda.is_available())"</code></pre>
                 <li><code>POST /api/v1/orders</code> — создание заказа</li>
                 <li><code>GET /api/v1/orders/{id}</code> — статус заказа</li>
             </ul>
-            <p>WebSocket: <code>wss://api.skytoken.io/v1/logs</code> (заглушка)</p>
+            <p>WebSocket: <code>wss://api.limiskytoken.io/v1/logs</code></p>
         </section>
         <section class="legal-section">
             <h3>5. FAQ по запуску ноды</h3>
@@ -132,11 +132,11 @@ python -c "import torch; print(torch.cuda.is_available())"</code></pre>
         <div class="footer-content">
             <div class="footer-column">
                 <div class="footer-logo">
-                    <img src="../photo_2026-02-10_01-00-57.jpg" alt="Skytoken logo" width="36" height="36" loading="lazy">
-                    <span>Skytoken</span>
+                    <img src="../photo_2026-02-10_01-00-57.jpg" alt="Limisky token logo" width="36" height="36" loading="lazy">
+                    <span>Limisky token</span>
                 </div>
-                <p>Skytoken — это децентрализованная P2P-сеть для аренды GPU/CPU для AI/ML.</p>
-                <p class="copyright">&copy; 2024-2026 Skytoken Foundation. Все права защищены.</p>
+                <p>Limisky token — это децентрализованная P2P-сеть для аренды GPU/CPU для AI/ML.</p>
+                <p class="copyright">&copy; 2024-2026 Limisky token Foundation. Все права защищены.</p>
             </div>
             <div class="footer-column">
                 <h4>Документы</h4>
@@ -153,7 +153,7 @@ python -c "import torch; print(torch.cuda.is_available())"</code></pre>
             <div class="footer-column">
                 <h4>Соцсети</h4>
                 <div class="social-links">
-                    <a href="https://t.me/SkyToken_Crypto_Official" title="Telegram" target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a href="https://t.me/limiskytoken_Crypto_Official" title="Telegram" target="_blank"><i class="fab fa-telegram"></i></a>
                                     </div>
             </div>
         </div>
